@@ -29,10 +29,10 @@ function Translator() {
 }
 Translator.prototype.defaults = function(_options) {
 	// pick `from / to` for `sl / tl`
-	_.extend(this._defaults, {
-		sl: _options.from,
-		tl: _options.to
-	});
+	var options = {};
+	if (_options.from) options.sl = _options.from;
+	if (_options.to) options.tl = _options.to;
+	_.extend(this._defaults, options);
 	return this;
 }
 

@@ -5,13 +5,12 @@ Translation using just page-fetching
 
 ## Imortant
 
-> All inputs are reguarded as sentences,
+> While using languages like Chinese,
+all inputs are reguarded as sentences,
 so they are probably capitalized.
 
 
 ## Usage
-
-### with Node
 
 ```shell
 npm install translat
@@ -22,8 +21,14 @@ var translat = require('translat'),
 	translator = translat.create({
 		from: 'en', to: 'zh-CN'
 	});
-translator.get('Cat', function(err, result){
-	console.log(result);	// 猫
+translator.get('I love you', function(err, result){
+	console.log(result);	// 我爱你
+});
+// dymamically switching languages
+translator.defaults({
+	from: 'fr', to: 'en'
+}).get("Je t'aime", function(err, result){
+	console.log(result);	// I love you
 });
 ```
 

@@ -30,10 +30,29 @@ describe('translat', function() {
 	});
 
 	it('gets correctly', function(done) {
-		translator1.get('Water', function(err, result) {
+		translator1.get('I love you', function(err, result) {
+			assert.equal(result, '我爱你');
 			translator2.get(result, function(err, result) {
-				assert.equal(result, 'Water');
+				assert.equal(result, 'I love you');
 				done();
+			});
+		});
+	});
+
+	it('defaults', function(done) {
+		translator1.get('Wind', function(err, result) {
+			assert.equal(result, '风');
+			translator1.defaults({
+				to: 'zh-TW'
+			}).get('Wind', function(err, result) {
+				assert.equal(result, '風');
+				// restore
+				translator1.defaults({
+					to: 'zh-CN'
+				}).get('Wind', function(err, result) {
+					assert.equal(result, '风');
+					done();
+				});
 			});
 		});
 	});

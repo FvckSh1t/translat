@@ -24,7 +24,7 @@ var translat = require('translat'),
 translator.get('I love you', function(err, result){
 	console.log(result);	// 我爱你
 });
-// dymamically switching languages
+// dynamically switching languages
 translator.defaults({
 	from: 'fr', to: 'en'
 }).get("Je t'aime", function(err, result){

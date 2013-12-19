@@ -1,0 +1,34 @@
+{
+	"name": "translat",
+	"description": "Translation using just page-fetching",
+	"version": "0.0.1",
+	"main": "./index.js",
+	"keywords": [
+		"translate",
+		"translat",
+		"language"
+	],
+	"author": {
+		"name": "Fritz-Lium",
+		"url": "https://github.com/Fritz-Lium/"
+	},
+	"homepage": "https://github.com/Fritz-Lium/translat",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:Fritz-Lium/translat.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Fritz-Lium/translat/issues"
+	},
+	"dependencies": {
+		"underscore": "1.5.2",
+		"request": "2.30.0"
+	},
+	"licenses": [{
+		"type": "MIT",
+		"url": "https://github.com/Fritz-Lium/translat/raw/master/LICENSE"
+	}],
+	"scripts": {
+		"test": "mocha test/index.js -R spec"
+	}
+}

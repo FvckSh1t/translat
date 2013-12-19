@@ -30,10 +30,17 @@ translator.get('Cat', function(err, result){
 
 ## Testing
 
-```shell
-npm install -g mocha
-```
+1. Make sure that you have `mocha` installed globally.
 
-```shell
-npm test
-```
+	```shell
+	npm install -g mocha
+	```
+
+2. Download the package from the repository.
+
+3. Run from inside.
+
+	```shell
+	cd translat
+	npm test
+	```
